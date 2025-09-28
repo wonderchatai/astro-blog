@@ -30,6 +30,9 @@ jobs:
           npm create astro@latest . -- --yes --strict
           npx astro add tailwind --yes
 
+      - name: List created files
+        run: ls -aR
+
       - name: Add Astro-specific .gitignore rules
         run: |
           echo "" >> .gitignore # Add a newline for separation if file exists
