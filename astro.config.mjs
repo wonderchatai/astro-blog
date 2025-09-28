@@ -5,6 +5,6 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://wonderchatai.github.io',
-  base: '/astro-blog',
+  base: '/astro-blog/', // Added trailing slash here
   integrations: [tailwind()]
 });
