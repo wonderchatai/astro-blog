@@ -25,11 +25,10 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Astro
-        run: npm install -g astro
-
-      - name: Create Astro project
-        run: astro add --yes tailwind && astro init --yes --strict
+      - name: Create Astro project in root
+        run: |
+          npm create astro@latest . -- --yes --strict
+          npx astro add tailwind --yes
 
       - name: Add Astro-specific .gitignore rules
         run: |
