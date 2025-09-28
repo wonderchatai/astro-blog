@@ -29,13 +29,10 @@ jobs:
       - name: Create Astro project
         run: astro add --yes tailwind && astro init --yes --strict
 
-      - name: Remove unnecessary files
+      - name: Add Astro-specific .gitignore rules
         run: |
-          rm -rf .git # Remove the .git directory created by astro init
-          rm -f .gitignore # Remove astro's default .gitignore
-
-      - name: Create .gitignore for Astro project
-        run: |
+          echo "" >> .gitignore # Add a newline for separation if file exists
+          echo "# Astro related ignores" >> .gitignore
           echo "node_modules/" >> .gitignore
           echo ".DS_Store" >> .gitignore
           echo "dist/" >> .gitignore
