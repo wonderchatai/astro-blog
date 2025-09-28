@@ -30,8 +30,8 @@ jobs:
           npm create astro@latest . -- --yes --strict
           npx astro add tailwind --yes
 
-      - name: List created files
-        run: ls -aR
+      - name: List created top-level directories
+        run: ls -F | grep /
 
       - name: Add Astro-specific .gitignore rules
         run: |
