@@ -30,12 +30,14 @@ jobs:
           npm create astro@latest temp-astro -- --yes --strict
           cd temp-astro
           npx astro add tailwind --yes
+          rm -rf .git # Remove the .git initialized by create-astro within temp-astro
           cd ..
 
       - name: Move Astro project to root and clean up
         run: |
-          find temp-astro -maxdepth 1 -mindepth 1 -not -name '.git' -exec mv {} . \; # Exclude .git directory
-          rmdir temp-astro
+          mv temp-astro/* . || true # Move non-hidden files, ignore if empty
+          mv temp-astro/.* . || true # Move hidden files, ignore if empty
+          rm -rf temp-astro
 
       - name: List created files
         run: ls -l
