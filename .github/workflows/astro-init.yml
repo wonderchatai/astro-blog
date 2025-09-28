@@ -32,10 +32,9 @@ jobs:
           npx astro add tailwind --yes
           cd ..
 
-      - name: Move Astro project to root
+      - name: Move Astro project to root and clean up
         run: |
-          mv temp-astro/* .
-          mv temp-astro/.* .
+          find temp-astro -maxdepth 1 -mindepth 1 -not -name '.git' -exec mv {} . \; # Exclude .git directory
           rmdir temp-astro
 
       - name: List created files
