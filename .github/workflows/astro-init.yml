@@ -25,10 +25,18 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Create Astro project in root
+      - name: Create Astro project in temporary directory
         run: |
-          npm create astro@latest . -- --yes --strict
+          npm create astro@latest temp-astro -- --yes --strict
+          cd temp-astro
           npx astro add tailwind --yes
+          cd ..
+
+      - name: Move Astro project to root
+        run: |
+          mv temp-astro/* .
+          mv temp-astro/.* .
+          rmdir temp-astro
 
       - name: List created files
         run: ls -l
@@ -55,7 +63,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "feat: Initialize Astro project"
+          git commit -m "feat: Initialize Astro project at root"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
