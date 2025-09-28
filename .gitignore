@@ -12,17 +12,3 @@ npm-debug.log
 .vscode/
 *.log
 *.tsbuildinfo
-
-# Astro related ignores
-node_modules/
-.DS_Store
-dist/
-build/
-.env
-.astro/
-package-lock.json
-yarn.lock
-npm-debug.log
-.vscode/
-*.log
-*.tsbuildinfo
