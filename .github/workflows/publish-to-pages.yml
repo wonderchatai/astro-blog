@@ -33,6 +33,15 @@ jobs:
       - name: Build Astro project
         run: npm run build
 
+      - name: List built files
+        run: ls -R dist
+
+      - name: Cat index.html
+        run: cat dist/index.html
+
+      - name: Cat sample blog post HTML
+        run: cat dist/blog/my-first-wonder-blog-post/index.html || true
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
