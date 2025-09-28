@@ -11,6 +11,8 @@ on:
 jobs:
   initialize-astro:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Grant write permission for the GITHUB_TOKEN
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
