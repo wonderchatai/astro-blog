@@ -1,46 +1,14 @@
-# Astro Starter Kit: Basics
+**Built with [WonderChat AI](https://wonderchat.dev).**
 
-```sh
-npm create astro@latest -- --template basics
-```
+<a href="https://apps.apple.com/us/app/wonderchat-ai/id6752497385" target="_blank">
+  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="50">
+</a>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This Astro blog was entirely prompted, developed, and debugged through an iterative process with **WonderChat AI**. Key steps and challenges overcome include:
 
-## 🚀 Project Structure
+*   **Astro Project Setup:** Created a GitHub Actions workflow to initialize the Astro project at the repository root, addressing issues with `npm create astro` creating nested directories by using a temporary directory strategy and explicitly removing the temporary `.git` folder.
+*   **GitHub Actions & Git Integration:** Debugged and resolved GitHub Actions `contents: write` permissions, and handled Git push/pull conflicts arising from workflow-initiated commits.
+*   **GitHub Pages Deployment:** Fixed 404 errors by correctly configuring `site` and `base` URLs in `astro.config.mjs`, ensuring the `base` path included a trailing slash for subpath deployments.
+*   **Tailwind CSS Configuration:** Resolved Tailwind CSS styling issues, including dependency version mismatches and the crucial "content option missing" warning, by creating and configuring `tailwind.config.mjs`.
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This project demonstrates an AI-driven development workflow, showcasing how WonderChat AI can assist throughout the entire software engineering lifecycle.
